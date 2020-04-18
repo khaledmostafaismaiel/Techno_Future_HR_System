@@ -1,0 +1,341 @@
+@keyframes move_from_left_shalby{
+
+    0% {
+      opacity: 0;
+      transform: translate(-10rem,-50rem);
+ 
+     }
+  
+    60% {
+        opacity: .3;
+       transform: translate(20rem,-20rem);
+ 
+      }
+  
+    100%{
+      opacity: 1;
+      transform: translate(0,0);
+ 
+    }
+  
+  
+}
+
+@keyframes move_from_left_mared{
+
+    0% {
+      opacity: 0;
+      transform: translate(-5rem , -30rem)  ;
+  
+     }
+  
+    60% {
+        opacity: .3;
+        transform: translate(10rem , 8rem);
+ 
+      }
+  
+    100%{
+      opacity: 1;
+      transform: translate(0, 0);
+
+    }
+  
+  
+}
+
+@keyframes move_from_down{
+    
+    0%{
+        opacity: 0;        
+    }
+
+    100%{
+        opacity: 1;   
+ 
+    }
+
+}
+
+/*universal selector*/
+*,
+*::after,
+*::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html{
+  /*this define 1rem*/
+  font-size: 62.5%;/*this percantage is to take ratio from the user font size*/
+}
+
+
+body{
+
+    box-sizing: border-box;
+
+    background-image: linear-gradient(to right ,#7ed56f,#28b485);
+  
+}
+
+
+.navigation__checkbox{
+    display: none; 
+}
+
+
+.navigation__button {
+    background-image: linear-gradient(to right ,#7ed56f,#28b485);
+    height: 5rem;
+    width: 5rem;
+    position: fixed;
+    top: 5rem;
+    right: 5rem;
+    border-radius: 50%;
+    z-index: 200;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0rem  0rem 2rem 0rem   black;
+}
+
+.navigation__background {
+    /*background*/
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    position: fixed;
+    top: 5rem;
+    right: 5rem;
+    background-image: radial-gradient(#7ed56f,#28b485);
+    z-index: 100;
+    transition: transform 1s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.navigation__icon{
+
+    position: fixed;
+    top: 7rem;
+    right: 6.3rem; 
+    font-weight: bold;   
+
+}
+
+.navigation__nav{
+    /*menu*/
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: -50rem;
+    z-index: 150;
+    opacity: 0;
+    transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.navigation__list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-15%,-50%);
+    list-style: none;
+    text-align: center;
+    width: 100%;
+}
+
+.navigation__item {
+    margin: 2rem;
+}
+
+
+.navigation__link:link,
+.navigation__link:visited {
+    display: inline-block;
+    font-size: 3rem;
+    font-weight: 300;
+    padding: 1rem 2rem;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-image: linear-gradient(125deg, transparent 0%, transparent 50%, white 50%);
+    background-size: 220%;
+    transition: all .4s;
+
+}
+
+.navigation__link:hover,
+.navigation__link:active {
+    color: #7ed56f;
+    background-position: 100%;
+    transform: translateX(2rem);
+}
+
+
+.navigation__checkbox:checked ~ .navigation__background {
+    transform: scale(80);
+}
+
+.navigation__checkbox:checked ~ .navigation__nav {
+    opacity: 1;
+    width: 100%;
+}
+
+
+
+
+
+/*
+.navigation:hover{
+    animation: try-to-scale;
+    animation-duration: 5s;
+    backface-visibility: hidden; /*to prevent shake of the chars when its animated*//*
+}
+
+*/
+
+
+
+
+.header{
+    margin: 2rem  2rem;
+    padding: 5rem;
+
+    height: 107rem;
+    width: 125.5;
+    font-size: 1.4rem;
+    
+    position: relative ;
+    
+    background-image: url("../img/header.jpg");
+    background-size: cover;
+    background-position: top;/* what ever the width of the view port it will allways at the top of the view port */
+    background-repeat: no-repeat;
+}
+
+
+
+
+.header .header__heading .header__heading--primery-word
+{
+    font-size: 10rem;
+    font-weight: bold;
+    text-transform: uppercase;
+ 
+    position: absolute;
+    top: 20rem;
+    left: 6rem;
+    
+    display: inline-block;
+
+    background-image: linear-gradient(to right ,#7ed56f,#28b485);
+    -webkit-background-clip: text;
+    color: transparent;
+
+
+    animation: move_from_left_shalby;
+    animation-duration: 5s;
+    backface-visibility: hidden; /*to prevent shake of the chars when its animated*/
+     
+ 
+}
+
+
+
+.header .header__heading .header__heading--secondary-word
+{
+    font-size: 10rem;
+    font-weight: bold;
+    text-transform: uppercase;
+ 
+    position: absolute;
+    top: 35rem;
+    left: 6rem;
+    
+     
+ 
+    background-image: linear-gradient(to right ,#7ed56f,#28b485);
+    display: inline-block;
+    -webkit-background-clip: text;
+    color: transparent;
+
+
+    animation: move_from_left_mared;
+    animation-duration: 5s;
+    backface-visibility: hidden; /*to prevent shake of the chars when its animated*/
+     
+
+}
+
+
+.operation .operation__menu{
+
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+
+    background-color: violet;
+
+    position: fixed;
+    top: 5rem;
+    right: 5rem;
+
+    z-index: 6;
+}
+
+@keyframes try{
+    
+    0%{
+        transform: scale(1);       
+     
+    }
+
+    50%{
+        transform: scale(70);
+     
+    }
+
+    100%{
+        transform: scale(1);
+     
+    }
+}
+
+.navigation__checkbox{
+    background-color: tomato;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    visibility: hidden;
+}
+
+.navigation__checkbox:checked{
+    visibility:visible;
+}
+.footer{
+
+    height: auto;
+    width: 125.5;
+    margin: 2rem ;
+    display: inline-block;
+    font-size: 1.4rem;
+    font-weight: normal;
+
+}
+
+
+.footer__copyright .footer--link{
+    color: blue;
+}
+
+
+
+.footer__copyright .footer--link:hover{
+    animation: move_from_down;
+    animation-duration: 3s;
+    backface-visibility: hidden; /*to prevent shake of the chars when its animated*/
+}
+
+.footer__copyright .footer--link:active{
+    color: red;
+}
